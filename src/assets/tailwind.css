@@ -1,0 +1,19 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg-mercury: #def4fc;
+    --color-bg-venus: #f7cc7e;
+    --color-bg-earth: #5258fe;
+    --color-bg-mars: #ff6c47;
+    --color-bg-jupiter: #ecad79;
+    --color-bg-saturn: #fccb69;
+    --color-bg-uranus: #66f0d4;
+    --color-bg-neptune: #477dfa;
+    --color-bg-background: #070722;
+  }
+}
