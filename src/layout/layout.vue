@@ -17,7 +17,7 @@ export default {
 
 <style scoped>
 .layout {
-  height: 100vh;
+  min-height: 100vh;
   background: hsl(240, 67%, 8%);
   background-image: url("../images/background-stars.svg");
   background-size: cover;

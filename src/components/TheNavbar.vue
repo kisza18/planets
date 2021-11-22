@@ -17,9 +17,8 @@
         </span>
       </button>
     </div>
-    <!--  <transition> -->
     <ul
-      class="flex flex-col text-white px-4 absolute z-10 w-full bg-background-color"
+      class="flex flex-col text-white px-4 absolute z-10 w-full bg-background-color overflow-hidden"
     >
       <transition style="transition-delay: 0.1s">
         <router-link
@@ -150,7 +149,6 @@
         </router-link>
       </transition>
     </ul>
-    <!-- </transition> -->
   </div>
 </template>
 
