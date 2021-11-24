@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
+/* import Home from "../views/Home.vue";
 import Earth from "../views/Earth.vue";
 import Jupiter from "../views/Jupiter.vue";
 import Mars from "../views/Mars.vue";
@@ -7,10 +7,11 @@ import Mercury from "../views/Mercury.vue";
 import Neptune from "../views/Neptune.vue";
 import Saturn from "../views/Saturn.vue";
 import Uranus from "../views/Uranus.vue";
-import Venus from "../views/Venus.vue";
+import Venus from "../views/Venus.vue"; */
+import Layout from "../layout/layout.vue";
 
 export const routes = [
-  { path: "/", component: Home },
+  /* { path: "/", component: Home },
   { path: "/earth", component: Earth },
   { path: "/jupiter", component: Jupiter },
   { path: "/mars", component: Mars },
@@ -18,7 +19,8 @@ export const routes = [
   { path: "/neptune", component: Neptune },
   { path: "/saturn", component: Saturn },
   { path: "/uranus", component: Uranus },
-  { path: "/venus", component: Venus },
+  { path: "/venus", component: Venus }, */
+  { path: "/:planet", component: Layout },
 ];
 
 const router = createRouter({

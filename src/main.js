@@ -3,6 +3,7 @@ import App from "./App.vue";
 import "./assets/tailwind.css";
 import router from "./router";
 import DefaultLayout from "./layout/layout.vue";
+import Data from "./static/data.json";
 
 const app = createApp(App);
 
@@ -20,6 +21,17 @@ app.config.globalProperties.$functions = {
       });
     }
   },
+};
+
+app.config.globalProperties.$json = {
+  mercury: Data[0],
+  venus: Data[1],
+  earth: Data[2],
+  mars: Data[3],
+  jupiter: Data[4],
+  saturn: Data[5],
+  uranus: Data[6],
+  neptune: Data[7],
 };
 
 app.mount("#app");
