@@ -2,11 +2,18 @@
   <div
     class="btns w-full flex items-center justify-between px-7 border-b-2 border-opacity-20"
   >
-    <button class="btn text-gray-300 tracking-widest active py-3">
+    <button
+      id="overviewBtn"
+      class="btn text-gray-300 tracking-widest active py-3"
+    >
       OVERVIEW
     </button>
-    <button class="btn text-gray-300 tracking-widest py-3">STRUCTURE</button>
-    <button class="btn text-gray-300 tracking-widest py-3">SURFACE</button>
+    <button id="structureBtn" class="btn text-gray-300 tracking-widest py-3">
+      STRUCTURE
+    </button>
+    <button id="surfaceBtn" class="btn text-gray-300 tracking-widest py-3">
+      SURFACE
+    </button>
   </div>
 </template>
 
@@ -20,6 +27,9 @@ export default {
 </script>
 
 <style scoped>
+button {
+  border-bottom: 3px solid transparent;
+}
 .active {
   border-bottom: 3px solid #419db9;
 }

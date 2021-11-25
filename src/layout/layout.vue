@@ -1,16 +1,28 @@
 <template>
   <div class="layout">
-    <the-navbar></the-navbar>
+    <TheNav />
     <Buttons />
-    <h1 class="text-white">{{ data.name }}</h1>
-    <Images />
-    <Infos />
-    <Numbers />
+    <Images
+      :planet="data.images.planet"
+      :internal="data.images.internal"
+      :geology="data.images.geology"
+    />
+    <Infos
+      :name="data.name"
+      :content="data.overview.content"
+      :source="data.overview.source"
+    />
+    <Numbers
+      :rotation="data.rotation"
+      :revolution="data.revolution"
+      :radius="data.radius"
+      :temperature="data.temperature"
+    />
   </div>
 </template>
 
 <script>
-import TheNavbar from "../components/TheNavbar.vue";
+import TheNav from "../components/TheNavbar.vue";
 import Buttons from "../components/Buttons.vue";
 import Images from "../components/Images.vue";
 import Infos from "../components/Infos.vue";
@@ -24,7 +36,7 @@ export default {
     };
   },
   components: {
-    TheNavbar,
+    TheNav,
     Buttons,
     Images,
     Infos,
@@ -47,6 +59,11 @@ export default {
       this.loadRoute(newRoute);
       this.loadData(newRoute.params.planet);
     },
+  },
+  mounted() {
+    let app = this;
+    app.$functions.switchContent(app);
+    app.$functions.activeBtn();
   },
 };
 </script>

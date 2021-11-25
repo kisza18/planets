@@ -1,11 +1,28 @@
 <template>
   <div class="images flex items-center justify-center py-28 relative z-0">
-    <img src="../images/planet-mercury.svg" alt="" class="w-32" />
-    <img src="../images/planet-mercury-internal.svg" alt="" class="hidden" />
     <img
-      src="../images/planet-mercury-geology.png"
-      alt=""
-      class="absolute w-24 top-40 hidden"
+      :src="require(`../images/${planet}`)"
+      alt="planet"
+      id="planetImage"
+      class="w-44"
+    />
+    <img
+      :src="require(`../images/${internal}`)"
+      alt="internal"
+      id="internalImage"
+      class="w-44 hidden"
+    />
+    <img
+      :src="require(`../images/${geology}`)"
+      alt="geology"
+      id="geologyImage"
+      class="absolute w-24 top-60 hidden"
     />
   </div>
 </template>
+
+<script>
+export default {
+  props: ["planet", "internal", "geology"],
+};
+</script>
