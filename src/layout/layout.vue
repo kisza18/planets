@@ -1,23 +1,28 @@
 <template>
   <div class="layout">
     <TheNav />
-    <Buttons />
-    <Images
-      :planet="data.images.planet"
-      :internal="data.images.internal"
-      :geology="data.images.geology"
-    />
-    <Infos
-      :name="data.name"
-      :content="data.overview.content"
-      :source="data.overview.source"
-    />
-    <Numbers
-      :rotation="data.rotation"
-      :revolution="data.revolution"
-      :radius="data.radius"
-      :temperature="data.temperature"
-    />
+    <div class="grid grid-cols-2 text-white">
+      <Buttons class="col-span-2 order-1 md:col-span-1 md:order-3" />
+      <Images
+        class="col-span-2 order-2 md:order-1"
+        :planet="data.images.planet"
+        :internal="data.images.internal"
+        :geology="data.images.geology"
+      />
+      <Infos
+        class="col-span-2 order-3 md:col-span-1 md:order-2"
+        :name="data.name"
+        :content="data.overview.content"
+        :source="data.overview.source"
+      />
+      <Numbers
+        class="col-span-2 order-4"
+        :rotation="data.rotation"
+        :revolution="data.revolution"
+        :radius="data.radius"
+        :temperature="data.temperature"
+      />
+    </div>
   </div>
 </template>
 
