@@ -4,24 +4,24 @@
   >
     <button
       id="overviewBtn"
-      class="btn text-gray-300 tracking-widest active py-3 md:flex md:w-full md:px-6 md:border-2 md:border-opacity-20"
+      class="btn text-gray-300 tracking-widest active py-3 md:flex md:w-full md:px-6 md:border-2 md:border-opacity-20 md:font-sans md:font-bold lg:mb-5 bg-black bg-opacity-40"
     >
       <span class="hidden md:flex pr-3">01</span>
       OVERVIEW
     </button>
     <button
       id="structureBtn"
-      class="btn text-gray-300 tracking-widest py-3 md:flex md:w-full md:px-6 md:border-2 md:border-opacity-20"
+      class="btn text-gray-300 tracking-widest py-3 md:flex md:w-full md:px-6 md:border-2 md:border-opacity-20 md:font-sans md:font-bold lg:mb-5 bg-black bg-opacity-40"
     >
       <span class="hidden md:flex pr-3">02</span>
-      STRUCTURE
+      <span class="hidden md:flex pr-2">INTERNAL</span>STRUCTURE
     </button>
     <button
       id="surfaceBtn"
-      class="btn text-gray-300 tracking-widest py-3 md:flex md:w-full md:px-6 md:border-2 md:border-opacity-20"
+      class="btn text-gray-300 tracking-widest py-3 md:flex md:w-full md:px-6 md:border-2 md:border-opacity-20 md:font-sans md:font-bold lg:mb-10 bg-black bg-opacity-40"
     >
       <span class="hidden md:flex pr-3">03</span>
-      SURFACE
+      SURFACE<span class="hidden md:flex pl-2">GEOLOGY</span>
     </button>
   </div>
 </template>
@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style scoped>
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 767px) {
   button {
     border-bottom: 3px solid transparent;
   }
@@ -44,9 +44,16 @@ export default {
     border-bottom: 3px solid #419db9;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
   .active {
     background-color: #419db9;
+  }
+  button {
+    transition: 0.2s ease-in;
+  }
+  button:hover {
+    background: rgb(43, 42, 51);
+    transition: 0.2s ease-in;
   }
 }
 </style>

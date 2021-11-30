@@ -1,7 +1,9 @@
 <template>
-  <div class="navbar w-full bg-transparent ">
+  <div
+    class="navbar w-full bg-transparent border-b-2 border-opacity-20 md:border-none"
+  >
     <div
-      class="flex items-center justify-between px-6 py-5 tracking-tighter border-b-2 border-opacity-20 md:justify-center md:border-none"
+      class="flex items-center justify-between px-6 py-5 tracking-tighter md:justify-center lg:hidden"
     >
       <a href="/" class="text-3xl font-bold text-white leading-none md:py-3"
         >THE PLANETS</a
@@ -153,65 +155,100 @@
     </ul>
 
     <!-- desktop nav -->
-    <div
-      class="desktop_nav hidden md:flex items-center justify-evenly text-gray-400 border-b-2 border-opacity-20 pb-6 pt-1 px-6"
-    >
-      <router-link to="/mercury" class="flex justify-between items-center">
-        <div class="flex items-center">
-          <span class="text-md font-mono font-bold tracking-wider" href=""
-            >MERCURY</span
+    <div class="border-b-2 border-opacity-20">
+      <div
+        class="desktop_nav hidden md:flex items-center justify-between text-gray-400 pb-6 pt-1 lg:pt-0 px-10 lg:pb-0 mx-auto"
+      >
+        <a
+          href="/"
+          class="text-3xl font-bold text-white leading-none hidden lg:flex"
+          >THE PLANETS</a
+        >
+        <div
+          class="hidden md:flex items-center justify-evenly w-full lg:w-auto"
+        >
+          <router-link
+            to="/mercury"
+            class="cta_links flex justify-between items-center mr-8 lg:border-t-4 lg:border-transparent lg:py-6"
           >
-        </div>
-      </router-link>
-      <router-link to="/venus" class="flex justify-between items-center">
-        <div class="flex items-center">
-          <span class="text-md font-mono font-bold tracking-wider" href=""
-            >VENUS</span
+            <div class="flex items-center">
+              <span class="text-md font-mono font-bold tracking-wider" href=""
+                >MERCURY</span
+              >
+            </div>
+          </router-link>
+          <router-link
+            to="/venus"
+            class="cta_links flex justify-between items-center mr-8 lg:border-t-4 lg:border-transparent lg:py-6"
           >
-        </div>
-      </router-link>
-      <router-link to="/earth" class="flex justify-between items-center">
-        <div class="flex items-center">
-          <span class="text-md font-mono font-bold tracking-wider" href=""
-            >EARTH</span
+            <div class="flex items-center">
+              <span class="text-md font-mono font-bold tracking-wider" href=""
+                >VENUS</span
+              >
+            </div>
+          </router-link>
+          <router-link
+            to="/earth"
+            class="cta_links flex justify-between items-center mr-8 lg:border-t-4 lg:border-transparent lg:py-6"
           >
-        </div>
-      </router-link>
-      <router-link to="/mars" class="flex justify-between items-center">
-        <div class="flex items-center">
-          <span class="text-md font-mono font-bold tracking-wider" href=""
-            >MARS</span
+            <div class="flex items-center">
+              <span class="text-md font-mono font-bold tracking-wider" href=""
+                >EARTH</span
+              >
+            </div>
+          </router-link>
+          <router-link
+            to="/mars"
+            class="cta_links flex justify-between items-center mr-8 lg:border-t-4 lg:border-transparent lg:py-6"
           >
-        </div>
-      </router-link>
-      <router-link to="/jupiter" class="flex justify-between items-center">
-        <div class="flex items-center">
-          <span class="text-md font-mono font-bold tracking-wider" href=""
-            >JUPITER</span
+            <div class="flex items-center">
+              <span class="text-md font-mono font-bold tracking-wider" href=""
+                >MARS</span
+              >
+            </div>
+          </router-link>
+          <router-link
+            to="/jupiter"
+            class="cta_links flex justify-between items-center mr-8 lg:border-t-4 lg:border-transparent lg:py-6"
           >
-        </div>
-      </router-link>
-      <router-link to="/saturn" class="flex justify-between items-center">
-        <div class="flex items-center">
-          <span class="text-md font-mono font-bold tracking-wider" href=""
-            >SATURN</span
+            <div class="flex items-center">
+              <span class="text-md font-mono font-bold tracking-wider" href=""
+                >JUPITER</span
+              >
+            </div>
+          </router-link>
+          <router-link
+            to="/saturn"
+            class="cta_links flex justify-between items-center mr-8 lg:border-t-4 lg:border-transparent lg:py-6"
           >
-        </div>
-      </router-link>
-      <router-link to="/uranus" class="flex justify-between items-center">
-        <div class="flex items-center">
-          <span class="text-md font-mono font-bold tracking-wider" href=""
-            >URANUS</span
+            <div class="flex items-center">
+              <span class="text-md font-mono font-bold tracking-wider" href=""
+                >SATURN</span
+              >
+            </div>
+          </router-link>
+          <router-link
+            to="/uranus"
+            class="cta_links flex justify-between items-center mr-8 lg:border-t-4 lg:border-transparent lg:py-6"
           >
-        </div>
-      </router-link>
-      <router-link to="/neptune" class="flex justify-between items-center">
-        <div class="flex items-center">
-          <span class="text-md font-mono font-bold tracking-wider" href=""
-            >NEPTUNE</span
+            <div class="flex items-center">
+              <span class="text-md font-mono font-bold tracking-wider" href=""
+                >URANUS</span
+              >
+            </div>
+          </router-link>
+          <router-link
+            to="/neptune"
+            class="cta_links flex justify-between items-center lg:border-t-4 lg:border-transparent lg:py-6"
           >
+            <div class="flex items-center">
+              <span class="text-md font-mono font-bold tracking-wider" href=""
+                >NEPTUNE</span
+              >
+            </div>
+          </router-link>
         </div>
-      </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -340,5 +377,42 @@ export default {
 .v-leave-to {
   /* transform: translateX(600px); */
   opacity: 0;
+}
+
+.desktop_nav {
+  max-width: 1500px;
+}
+
+a {
+  transition: 0.3s ease-in;
+}
+a:hover {
+  color: white;
+  transition: 0.3s ease-in;
+}
+@media screen and (min-width: 1024px) {
+  .cta_links {
+    position: relative;
+  }
+  .cta_links::after {
+    content: "";
+    position: absolute;
+    border-top: 5px solid #419db9;
+    top: -5px;
+    left: 50%;
+    right: 50%;
+    transition: all 500ms;
+  }
+  .cta_links:hover::after {
+    right: 0;
+    left: 0;
+  }
+  .router-link-active {
+    border-top: 4px solid #419db9;
+    color: white;
+  }
+}
+.router-link-active {
+  color: white;
 }
 </style>
