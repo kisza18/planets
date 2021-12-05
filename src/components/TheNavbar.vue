@@ -1,6 +1,6 @@
 <template>
   <div
-    class="navbar w-full bg-transparent border-b-2 border-opacity-20 md:border-none"
+    class="navbar w-full bg-transparent border-b-2 border-opacity-0 md:border-none"
   >
     <div
       class="flex items-center justify-between px-6 py-5 tracking-tighter md:justify-center lg:hidden"
@@ -21,138 +21,175 @@
         </button>
       </div>
     </div>
-    <ul
-      class="flex flex-col text-white px-4 absolute z-10 w-full bg-background-color overflow-hidden"
+    <transition
+      enter-active-class="animate__animated animate__fadeIn"
+      leave-active-class="animate__animated animate__fadeOut"
     >
-      <transition style="transition-delay: 0.1s">
-        <router-link
-          v-if="hamburger"
-          @click="toggleHam"
-          to="/mercury"
-          class="flex justify-between items-center border-b-2 border-opacity-20 px-3 py-4"
+      <ul
+        class="flex flex-col text-white px-4 absolute z-10 w-full bg-background-color overflow-hidden"
+      >
+        <transition
+          enter-active-class="animate__animated animate__fadeInRight"
+          leave-active-class="animate__animated animate__fadeOut"
+          mode="out-in"
         >
-          <div class="flex items-center">
-            <span class="w-5 h-5 bg-mercury-color rounded-full mr-5"></span>
-            <span class="text-xl font-mono font-bold tracking-wider" href=""
-              >MERCURY</span
-            >
-          </div>
-          <i class="fal fa-chevron-right text-xs"></i>
-        </router-link>
-      </transition>
-      <transition style="transition-delay: 0.12s">
-        <router-link
-          v-if="hamburger"
-          @click="toggleHam"
-          to="/venus"
-          class="flex justify-between items-center border-b-2 border-opacity-20 px-3 py-4"
+          <router-link
+            v-if="hamburger"
+            @click="toggleHam"
+            to="/mercury"
+            class="flex justify-between items-center border-b-2 border-opacity-20 px-3 py-4"
+          >
+            <div class="flex items-center">
+              <span class="w-5 h-5 bg-mercury-color rounded-full mr-5"></span>
+              <span class="text-xl font-mono font-bold tracking-wider" href=""
+                >MERCURY</span
+              >
+            </div>
+            <i class="fal fa-chevron-right text-xs"></i>
+          </router-link>
+        </transition>
+        <transition
+          enter-active-class="animate__animated animate__fadeInRight venus"
+          leave-active-class="animate__animated animate__fadeOut"
+          mode="out-in"
         >
-          <div class="flex items-center">
-            <span class="w-5 h-5 bg-venus-color rounded-full mr-5"></span>
-            <span class="text-xl font-mono font-bold tracking-wider" href=""
-              >VENUS</span
-            >
-          </div>
-          <i class="fal fa-chevron-right text-xs"></i>
-        </router-link>
-      </transition>
-      <transition style="transition-delay: 0.14s">
-        <router-link
-          v-if="hamburger"
-          @click="toggleHam"
-          to="/earth"
-          class="flex justify-between items-center border-b-2 border-opacity-20 px-3 py-4"
+          <router-link
+            v-if="hamburger"
+            @click="toggleHam"
+            to="/venus"
+            class="flex justify-between items-center border-b-2 border-opacity-20 px-3 py-4"
+          >
+            <div class="flex items-center">
+              <span class="w-5 h-5 bg-venus-color rounded-full mr-5"></span>
+              <span class="text-xl font-mono font-bold tracking-wider" href=""
+                >VENUS</span
+              >
+            </div>
+            <i class="fal fa-chevron-right text-xs"></i>
+          </router-link>
+        </transition>
+        <transition
+          enter-active-class="animate__animated animate__fadeInRight earth"
+          leave-active-class="animate__animated animate__fadeOut"
+          mode="out-in"
         >
-          <div class="flex items-center">
-            <span class="w-5 h-5 bg-earth-color rounded-full mr-5"></span>
-            <span class="text-xl font-mono font-bold tracking-wider" href=""
-              >EARTH</span
-            >
-          </div>
-          <i class="fal fa-chevron-right text-xs"></i>
-        </router-link>
-      </transition>
-      <transition style="transition-delay: 0.16s">
-        <router-link
-          v-if="hamburger"
-          @click="toggleHam"
-          to="/mars"
-          class="flex justify-between items-center border-b-2 border-opacity-20 px-3 py-4"
+          <router-link
+            v-if="hamburger"
+            @click="toggleHam"
+            to="/earth"
+            class="flex justify-between items-center border-b-2 border-opacity-20 px-3 py-4"
+          >
+            <div class="flex items-center">
+              <span class="w-5 h-5 bg-earth-color rounded-full mr-5"></span>
+              <span class="text-xl font-mono font-bold tracking-wider" href=""
+                >EARTH</span
+              >
+            </div>
+            <i class="fal fa-chevron-right text-xs"></i>
+          </router-link>
+        </transition>
+        <transition
+          enter-active-class="animate__animated animate__fadeInRight mars"
+          leave-active-class="animate__animated animate__fadeOut"
+          mode="out-in"
         >
-          <div class="flex items-center">
-            <span class="w-5 h-5 bg-mars-color rounded-full mr-5"></span>
-            <span class="text-xl font-mono font-bold tracking-wider" href=""
-              >MARS</span
-            >
-          </div>
-          <i class="fal fa-chevron-right text-xs"></i>
-        </router-link>
-      </transition>
-      <transition style="transition-delay: 0.18s">
-        <router-link
-          v-if="hamburger"
-          @click="toggleHam"
-          to="/jupiter"
-          class="flex justify-between items-center border-b-2 border-opacity-20 px-3 py-4"
+          <router-link
+            v-if="hamburger"
+            @click="toggleHam"
+            to="/mars"
+            class="flex justify-between items-center border-b-2 border-opacity-20 px-3 py-4"
+          >
+            <div class="flex items-center">
+              <span class="w-5 h-5 bg-mars-color rounded-full mr-5"></span>
+              <span class="text-xl font-mono font-bold tracking-wider" href=""
+                >MARS</span
+              >
+            </div>
+            <i class="fal fa-chevron-right text-xs"></i>
+          </router-link>
+        </transition>
+        <transition
+          enter-active-class="animate__animated animate__fadeInRight jupiter"
+          leave-active-class="animate__animated animate__fadeOut"
+          mode="out-in"
         >
-          <div class="flex items-center">
-            <span class="w-5 h-5 bg-jupiter-color rounded-full mr-5"></span>
-            <span class="text-xl font-mono font-bold tracking-wider" href=""
-              >JUPITER</span
-            >
-          </div>
-          <i class="fal fa-chevron-right text-xs"></i>
-        </router-link>
-      </transition>
-      <transition style="transition-delay: 0.2s">
-        <router-link
-          v-if="hamburger"
-          @click="toggleHam"
-          to="/saturn"
-          class="flex justify-between items-center border-b-2 border-opacity-20 px-3 py-4"
+          <router-link
+            v-if="hamburger"
+            @click="toggleHam"
+            to="/jupiter"
+            class="flex justify-between items-center border-b-2 border-opacity-20 px-3 py-4"
+          >
+            <div class="flex items-center">
+              <span class="w-5 h-5 bg-jupiter-color rounded-full mr-5"></span>
+              <span class="text-xl font-mono font-bold tracking-wider" href=""
+                >JUPITER</span
+              >
+            </div>
+            <i class="fal fa-chevron-right text-xs"></i>
+          </router-link>
+        </transition>
+        <transition
+          enter-active-class="animate__animated animate__fadeInRight saturn"
+          leave-active-class="animate__animated animate__fadeOut"
+          mode="out-in"
         >
-          <div class="flex items-center">
-            <span class="w-5 h-5 bg-saturn-color rounded-full mr-5"></span>
-            <span class="text-xl font-mono font-bold tracking-wider" href=""
-              >SATURN</span
-            >
-          </div>
-          <i class="fal fa-chevron-right text-xs"></i>
-        </router-link>
-      </transition>
-      <transition style="transition-delay: 0.22s">
-        <router-link
-          v-if="hamburger"
-          @click="toggleHam"
-          to="/uranus"
-          class="flex justify-between items-center border-b-2 border-opacity-20 px-3 py-4"
+          <router-link
+            v-if="hamburger"
+            @click="toggleHam"
+            to="/saturn"
+            class="flex justify-between items-center border-b-2 border-opacity-20 px-3 py-4"
+          >
+            <div class="flex items-center">
+              <span class="w-5 h-5 bg-saturn-color rounded-full mr-5"></span>
+              <span class="text-xl font-mono font-bold tracking-wider" href=""
+                >SATURN</span
+              >
+            </div>
+            <i class="fal fa-chevron-right text-xs"></i>
+          </router-link>
+        </transition>
+        <transition
+          enter-active-class="animate__animated animate__fadeInRight uranus"
+          leave-active-class="animate__animated animate__fadeOut"
+          mode="out-in"
         >
-          <div class="flex items-center">
-            <span class="w-5 h-5 bg-uranus-color rounded-full mr-5"></span>
-            <span class="text-xl font-mono font-bold tracking-wider" href=""
-              >URANUS</span
-            >
-          </div>
-          <i class="fal fa-chevron-right text-xs"></i>
-        </router-link>
-      </transition>
-      <transition style="transition-delay: 0.24s">
-        <router-link
-          v-if="hamburger"
-          @click="toggleHam"
-          to="/neptune"
-          class="flex justify-between items-center border-b-2 border-opacity-20 px-3 py-4"
+          <router-link
+            v-if="hamburger"
+            @click="toggleHam"
+            to="/uranus"
+            class="flex justify-between items-center border-b-2 border-opacity-20 px-3 py-4"
+          >
+            <div class="flex items-center">
+              <span class="w-5 h-5 bg-uranus-color rounded-full mr-5"></span>
+              <span class="text-xl font-mono font-bold tracking-wider" href=""
+                >URANUS</span
+              >
+            </div>
+            <i class="fal fa-chevron-right text-xs"></i>
+          </router-link>
+        </transition>
+        <transition
+          enter-active-class="animate__animated animate__fadeInRight neptune"
+          leave-active-class="animate__animated animate__fadeOut"
+          mode="out-in"
         >
-          <div class="flex items-center">
-            <span class="w-5 h-5 bg-neptune-color rounded-full mr-5"></span>
-            <span class="text-xl font-mono font-bold tracking-wider" href=""
-              >NEPTUNE</span
-            >
-          </div>
-          <i class="fal fa-chevron-right text-xs"></i>
-        </router-link>
-      </transition>
-    </ul>
+          <router-link
+            v-if="hamburger"
+            @click="toggleHam"
+            to="/neptune"
+            class="flex justify-between items-center border-b-2 border-opacity-20 px-3 py-4"
+          >
+            <div class="flex items-center">
+              <span class="w-5 h-5 bg-neptune-color rounded-full mr-5"></span>
+              <span class="text-xl font-mono font-bold tracking-wider" href=""
+                >NEPTUNE</span
+              >
+            </div>
+            <i class="fal fa-chevron-right text-xs"></i>
+          </router-link>
+        </transition>
+      </ul>
+    </transition>
 
     <!-- desktop nav -->
     <div class="border-b-2 border-opacity-20">
@@ -269,6 +306,27 @@ export default {
 </script>
 
 <style scoped>
+.venus {
+  animation-delay: 0.12s;
+}
+.earth {
+  animation-delay: 0.24s;
+}
+.mars {
+  animation-delay: 0.36s;
+}
+.jupiter {
+  animation-delay: 0.48s;
+}
+.saturn {
+  animation-delay: 0.6s;
+}
+.uranus {
+  animation-delay: 0.72s;
+}
+.neptune {
+  animation-delay: 0.84s;
+}
 .hamburger {
   display: inline-block;
   cursor: pointer;
@@ -357,26 +415,6 @@ export default {
   transform: rotate(-90deg);
   transition: bottom 0.075s ease,
     transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-.v-enter-from {
-  transform: translateX(500px);
-}
-.v-enter-active {
-  transition: all 0.7s ease-out;
-}
-.v-enter-to {
-  transform: translateX(0);
-}
-.v-leave-from {
-  /* transform: translateX(0); */
-  opacity: 1;
-}
-.v-leave-active {
-  transition: all 0.2s ease-out;
-}
-.v-leave-to {
-  /* transform: translateX(600px); */
-  opacity: 0;
 }
 
 .desktop_nav {

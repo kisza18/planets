@@ -1,9 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
 import Layout from "../layout/layout.vue";
 
 export const routes = [
-  { path: "/", component: Home },
+  { path: "/", redirect: "/mercury" },
   { path: "/:planet", component: Layout },
 ];
 

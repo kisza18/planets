@@ -1,28 +1,25 @@
 <template>
-  <div class="images flex items-center justify-center py-28 relative z-0">
+  <div
+    :key="content"
+    class="images flex items-center justify-center py-28 relative z-0 animate__animated animate__rotateInUpLeft"
+  >
     <img
       :src="require(`../images/${planet}`)"
       alt="planet"
       id="planetImage"
       class="w-44 md:w-60 lg:w-80"
     />
-    <img
-      :src="require(`../images/${internal}`)"
-      alt="internal"
-      id="internalImage"
-      class="w-44 hidden md:w-80"
-    />
-    <img
-      :src="require(`../images/${geology}`)"
-      alt="geology"
-      id="geologyImage"
-      class="absolute w-24 top-60 hidden md:w-36 lg:top-96"
-    />
   </div>
 </template>
 
 <script>
 export default {
-  props: ["planet", "internal", "geology"],
+  props: ["planet", "content"],
 };
 </script>
+
+<style scoped>
+div {
+  animation-duration: 2s;
+}
+</style>

@@ -3,22 +3,25 @@
     class="btns w-full flex items-center justify-between px-7 border-b-2 border-opacity-20 md:grid grid-cols-1 md:border-none md:px-12"
   >
     <button
+      @click="$emit('overviewBtn')"
       id="overviewBtn"
-      class="btn text-gray-300 tracking-widest active py-3 md:flex md:w-full md:px-6 md:border-2 md:border-opacity-20 md:font-sans md:font-bold lg:mb-5 bg-black bg-opacity-40"
+      class="btn text-gray-300 tracking-widest active py-3 md:flex md:w-full md:px-6 md:border-2 md:border-opacity-20 md:font-sans md:font-bold lg:mb-5 md:bg-black md:bg-opacity-40"
     >
       <span class="hidden md:flex pr-3">01</span>
       OVERVIEW
     </button>
     <button
+      @click="$emit('structureBtn')"
       id="structureBtn"
-      class="btn text-gray-300 tracking-widest py-3 md:flex md:w-full md:px-6 md:border-2 md:border-opacity-20 md:font-sans md:font-bold lg:mb-5 bg-black bg-opacity-40"
+      class="btn text-gray-300 tracking-widest py-3 md:flex md:w-full md:px-6 md:border-2 md:border-opacity-20 md:font-sans md:font-bold lg:mb-5 md:bg-black md:bg-opacity-40"
     >
       <span class="hidden md:flex pr-3">02</span>
       <span class="hidden md:flex pr-2">INTERNAL</span>STRUCTURE
     </button>
     <button
+      @click="$emit('surfaceBtn')"
       id="surfaceBtn"
-      class="btn text-gray-300 tracking-widest py-3 md:flex md:w-full md:px-6 md:border-2 md:border-opacity-20 md:font-sans md:font-bold lg:mb-10 bg-black bg-opacity-40"
+      class="btn text-gray-300 tracking-widest py-3 md:flex md:w-full md:px-6 md:border-2 md:border-opacity-20 md:font-sans md:font-bold lg:mb-10 md:bg-black md:bg-opacity-40"
     >
       <span class="hidden md:flex pr-3">03</span>
       SURFACE<span class="hidden md:flex pl-2">GEOLOGY</span>
@@ -36,6 +39,9 @@ export default {
 </script>
 
 <style scoped>
+div {
+  animation-duration: 2s;
+}
 @media screen and (max-width: 767px) {
   button {
     border-bottom: 3px solid transparent;

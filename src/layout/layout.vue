@@ -1,26 +1,31 @@
 <template>
   <div class="layout">
     <TheNav />
-    <main class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-2 text-white">
-        <Buttons class="col-span-2 order-1 md:col-span-1 md:order-3" />
-        <Images
-          class="col-span-2 order-2 md:order-1 lg:col-span-1 lg:row-span-2"
-          :planet="data.images.planet"
-          :internal="data.images.internal"
-          :geology="data.images.geology"
-        />
-        <Infos
-          class="col-span-2 order-3 md:col-span-1 md:order-2"
-          :name="data.name"
-          :content="data.overview.content"
-          :source="data.overview.source"
-        />
-        <transition
-          mode="out-in"
-          enter-active-class="animate__backInUp"
-          leave-active-class="animate__backOutDown"
-        >
+    <transition
+      leave-active-class="animate__animated animate__fadeOut"
+      mode="out-in"
+    >
+      <main class="max-w-7xl mx-auto" :key="$route">
+        <div class="grid grid-cols-2 text-white">
+          <Buttons
+            :key="$route"
+            @overviewBtn="contentChangeOverview()"
+            @structureBtn="contentChangeStructure()"
+            @surfaceBtn="contentChangeSurface()"
+            class="col-span-2 order-1 md:col-span-1 md:order-3 animate__animated animate__fadeInRight"
+          />
+          <Images
+            :key="$route.path"
+            class="col-span-2 order-2 md:order-1 lg:col-span-1 lg:row-span-2"
+            :planet="image"
+            :content="content"
+          />
+          <Infos
+            class="col-span-2 order-3 md:col-span-1 md:order-2"
+            :name="data.name"
+            :content="content"
+            :source="source"
+          />
           <Numbers
             class="col-span-2 order-4"
             :rotation="data.rotation"
@@ -28,9 +33,9 @@
             :radius="data.radius"
             :temperature="data.temperature"
           />
-        </transition>
-      </div>
-    </main>
+        </div>
+      </main>
+    </transition>
   </div>
 </template>
 
@@ -46,6 +51,9 @@ export default {
     return {
       planet: "",
       data: [],
+      content: "",
+      source: "",
+      image: "",
     };
   },
   components: {
@@ -61,6 +69,23 @@ export default {
     },
     loadData(planet) {
       this.data = this.$json[planet];
+      this.content = this.data.overview.content;
+      this.image = this.data.images.planet;
+    },
+    contentChangeOverview() {
+      this.content = this.data.overview.content;
+      this.source = this.data.overview.source;
+      this.image = this.data.images.planet;
+    },
+    contentChangeStructure() {
+      this.content = this.data.structure.content;
+      this.source = this.data.structure.source;
+      this.image = this.data.images.internal;
+    },
+    contentChangeSurface() {
+      this.content = this.data.geology.content;
+      this.source = this.data.geology.source;
+      this.image = this.data.images.geology;
     },
   },
   created() {
@@ -75,7 +100,6 @@ export default {
   },
   mounted() {
     let app = this;
-    app.$functions.switchContent(app);
     app.$functions.activeBtn();
   },
 };
@@ -86,6 +110,6 @@ export default {
   min-height: 100vh;
   background: hsl(240, 67%, 8%);
   background-image: url("../images/background.jpg");
-  background-size: cover;
+  background-size: auto;
 }
 </style>
