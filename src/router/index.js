@@ -2,8 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import Layout from "../layout/layout.vue";
 
 export const routes = [
-  { path: "/", redirect: "/mercury" },
-  { path: "/:planet", component: Layout },
+  { path: "/planets", redirect: "/mercury" },
+  { path: "/planets/:planet", component: Layout },
 ];
 
 const router = createRouter({
