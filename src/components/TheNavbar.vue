@@ -199,7 +199,7 @@
         class="desktop_nav hidden md:flex items-center justify-between text-gray-400 pb-6 pt-1 lg:pt-0 px-10 lg:pb-0 mx-auto"
       >
         <a
-          href="/"
+          href="/mercury"
           class="text-3xl font-bold text-white leading-none hidden lg:flex"
           >THE PLANETS</a
         >
