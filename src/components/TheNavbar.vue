@@ -5,9 +5,7 @@
     <div
       class="flex items-center justify-between px-6 py-5 tracking-tighter md:justify-center lg:hidden"
     >
-      <a
-        href="/mercury"
-        class="text-3xl font-bold text-white leading-none md:py-3"
+      <a href="/" class="text-3xl font-bold text-white leading-none md:py-3"
         >THE PLANETS</a
       >
       <div class="md:hidden">
@@ -199,7 +197,7 @@
         class="desktop_nav hidden md:flex items-center justify-between text-gray-400 pb-6 pt-1 lg:pt-0 px-10 lg:pb-0 mx-auto"
       >
         <a
-          href="/mercury"
+          href="/"
           class="text-3xl font-bold text-white leading-none hidden lg:flex"
           >THE PLANETS</a
         >
